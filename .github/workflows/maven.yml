@@ -28,5 +28,5 @@ jobs:
       run: ls -a
     - name: What is in the target directory
       run: |
-        cd target
+        cd config-server-demo
         ls -a
