@@ -24,8 +24,8 @@ jobs:
         cache: maven
     - name: Step 2 - Build with Maven
       run: | 
-      mvn -B package --file config-server-demo/pom.xml
-      mkdir staging && cp target/*.jar staging
+        mvn -B package --file config-server-demo/pom.xml
+        mkdir staging && cp target/*.jar staging
       
     - name: Step 3 - List the current directory ls-a
       run: ls -a
