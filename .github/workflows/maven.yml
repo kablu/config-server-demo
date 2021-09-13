@@ -24,3 +24,9 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file config-server-demo/pom.xml
+    - name: List the current directory ls-a
+      run: ls -a
+    - name: What is in the target directory
+      run: |
+        cd target
+        ls -a
