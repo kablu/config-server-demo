@@ -53,7 +53,8 @@ jobs:
       run: |
         pwd
         ls -a
-        docker build . --file ../Dockerfile --tag config-image:$(date +%s)
+        cd config-server-demo
+        docker build . --file Dockerfile --tag config-image:$(date +%s)
         
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
