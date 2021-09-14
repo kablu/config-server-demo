@@ -47,8 +47,8 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
     
 
-    - name: Build and push
-    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file config-server-demo/Dockerfile --tag config-image:$(date +%s)
         
