@@ -5,7 +5,7 @@ FROM openjdk:8-slim as build
 MAINTAINER kabluMandal
 
 # Add the application's jar to the container
-COPY /home/runner/work/config-server-demo/config-server-demo/config-server-demo/target/config-server-demo-0.0.1-SNAPSHOT.jar config-server-demo-0.0.1-SNAPSHOT.jar
+COPY staging config-server-demo-0.0.1-SNAPSHOT.jar
 
 
 #execute the application
