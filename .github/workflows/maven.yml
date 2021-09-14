@@ -57,7 +57,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: config-server-demo
-        file: ./Dockerfile
+        file: .././config-server-demo/Dockerfile
         push: false
         tags: ${{ secrets.DOCKER_HUB_USERNAME }}/mandal:latest
         
