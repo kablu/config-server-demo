@@ -80,7 +80,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<repository>dailycodebuffer/user-service</repository>
+					<repository>kablumndl546/config-server-demo</repository>
 					<tag>${project.version}</tag>
 					<useMavenSettingsForAuth>true</useMavenSettingsForAuth>
 				</configuration>
