@@ -39,6 +39,10 @@ jobs:
       with: 
         name: github-actions-artifact
         path: staging
+    
+    - name: docker build
+      run: |
+        docker build config-server-demo/target/*.jar -t kablumndl546/config-server-demo
         
 
   
