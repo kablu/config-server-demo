@@ -50,7 +50,10 @@ jobs:
     - name: Build the Docker image
       uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file ./Dockerfile --tag config-image:$(date +%s)
+      run: |
+        pwd
+        ls -a
+        docker build . --file ../Dockerfile --tag config-image:$(date +%s)
         
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
