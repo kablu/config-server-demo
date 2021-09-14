@@ -40,9 +40,13 @@ jobs:
         name: github-actions-artifact
         path: staging
     
-    - name: docker build
-      run: |
-        docker build config-server-demo/target/*.jar -t kablumndl546/config-server-demo
+    - name: Login to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_HUB_USERNAME }}
+        password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+
+
         
 
   
