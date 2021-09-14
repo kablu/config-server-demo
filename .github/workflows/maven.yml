@@ -31,6 +31,8 @@ jobs:
       run: | 
         ls -a
         pwd
+        cd config-server-demo
+        ls -a
         
     - name: Step 4 - What is in the target directory
       run: |
