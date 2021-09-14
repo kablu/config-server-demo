@@ -28,11 +28,15 @@ jobs:
         mkdir staging && cp config-server-demo/target/*.jar staging.jar
       
     - name: Step 3 - List the current directory ls-a
-      run: ls -a
+      run: | 
+        ls -a
+        pwd
+        
     - name: Step 4 - What is in the target directory
       run: |
         cd config-server-demo/target
         ls -a
+        pwd
     
     - name: Step 5 - Persists workflow data as artifacts
       uses: actions/upload-artifact@v2
@@ -45,16 +49,15 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-    
-
-    - name: Build the Docker image
-      uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: |
-        pwd
-        ls -a
-        cd config-server-demo
-        docker build . --file Dockerfile --tag config-image:$(date +%s)
+        
+    - name: Build and push
+      id: docker_build
+      uses: docker/build-push-action@v2
+      with:
+        context: config-server-demo
+        file: ./Dockerfile
+        push: false
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/mandal:latest
         
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
