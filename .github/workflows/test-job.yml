@@ -33,8 +33,8 @@ jobs:
         run:  |
           pwd
           ls
-      - uses: actions/checkout@v2
       - name: Checkingout
+      - uses: actions/checkout@v2
         with:
           ref: 'master'
 
