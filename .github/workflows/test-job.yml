@@ -26,3 +26,10 @@ jobs:
       env:
           MAVEN_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List Files
+        run:  |
+          pwd
+          ls
