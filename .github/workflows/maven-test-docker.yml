@@ -22,6 +22,8 @@ jobs:
         run: |
           ls -a
           pwd
+          cd /
+          ls -a
         working-directory: github-actions-java-maven
         #run: mvn -B compile
 
