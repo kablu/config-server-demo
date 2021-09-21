@@ -34,7 +34,7 @@ jobs:
           pwd
           ls
       - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
           repository: https://github.com/kablu/github-action-test
 
