@@ -34,7 +34,10 @@ jobs:
           pwd
           ls
       - name: Checkout
-      - uses: actions/checkout@v1
+        uses: actions/checkout@v2
+        with:
+          repository: https://github.com/kablu/github-action-test
+
       - name: List Files After Checkout
           run:|
             pwd
@@ -47,4 +50,3 @@ jobs:
       - name: Log Greeting Time
         run: echo " {{ steps.greet.outputs.time }}"
           
-
