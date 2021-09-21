@@ -19,9 +19,9 @@ jobs:
           java-package: jdk
           java-version: ${{ matrix.java }}
       - name: Compile the Project
-          run:|
-            ls -a
-            pwd
+           run:|
+             ls -a
+             pwd
             
         working-directory: github-actions-java-maven
         run: mvn -B compile
