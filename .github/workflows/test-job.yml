@@ -34,9 +34,12 @@ jobs:
           pwd
           ls
       - name: Checkout
+         run:|
+           ls -a
         uses: actions/checkout@v2
         with:
           repository: https://github.com/kablu/github-action-test
+        
 
       - name: List Files After Checkout
           run:|
